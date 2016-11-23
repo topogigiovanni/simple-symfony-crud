@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% include 'partials/navbar.html.twig' %}
+        {% include 'partials/flash.html.twig' %}
+        <div class="row list-group">
+			<div class="col-xs-12">
+				{{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
+					{{ form_errors(form) }}
+					
+				    {{ form_widget(form) }}
+				    <div class="button-group input-group">
+				    	<button class="btn btn-success" type="	submit">Salvar</button>
+					</div>
+				{{ form_end(form) }}
+			</div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

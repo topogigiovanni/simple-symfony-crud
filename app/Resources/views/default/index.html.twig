@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% include 'partials/navbar.html.twig' %}
+        {% include 'partials/flash.html.twig' %}
+        
+        <div id="products" class="row list-group">
+
+            <div class="item  col-xs-6 col-lg-6">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                    <div class="caption">
+                        <h3 class="group inner list-group-item-heading">
+                            Produtos</h3>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <a class="btn btn-info" href="{{ path('product_list', {}) }}">Visualizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item  col-xs-6 col-lg-6">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                    <div class="caption">
+                        <h3 class="group inner list-group-item-heading">
+                            Categoria de produtos</h3>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <a class="btn btn-info" href="{{ path('category_list', {}) }}">Visualizar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

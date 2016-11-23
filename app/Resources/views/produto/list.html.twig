@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% include 'partials/navbar.html.twig' %}
+        {% include 'partials/flash.html.twig' %}
+        <div id="products" class="row list-group">
+
+			{% if products | length <= 0 %}
+			    <p>
+			    	Nenhum produto encontrado.
+			    </p>
+			{% endif %}
+
+            {% for product in products %}
+            	<div class="item  col-xs-4 col-lg-4">
+	                <div class="thumbnail">
+	                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+	                    <div class="caption">
+	                        <h4 class="group inner list-group-item-heading">
+	                            {{ product.nomeProduto }}</h4>
+	                        <div class="row">
+	                            <div class="col-xs-12 col-md-6">
+	                                <p class="lead">
+	                                    R${{ product.valorProduto | number_format(2, ',', '.') }}</p>
+	                            </div>
+	                            <div class="col-xs-12 col-md-6">
+		                            <a class="btn btn-info" href="{{ path('product_edit', {'idProduto': product.idProduto}) }}">Editar</a>
+		                            <a class="btn btn-danger" href="#" data-delete-entity data-delete-url="{{ path('product_delete', {'idProduto': product.idProduto}) }}">Deletar</a>
+		                        </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

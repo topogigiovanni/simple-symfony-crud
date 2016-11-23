@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Produto" table="produto">
+    <indexes>
+      <index name="IDX_5CAC49D7AFF4DE6E" columns="id_categoria_produto"/>
+    </indexes>
+    <id name="idProduto" type="integer" column="id_produto">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dataCadastro" type="datetime" column="data_cadastro" nullable="false"/>
+    <field name="nomeProduto" type="string" column="nome_produto" length="150" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="valorProduto" type="decimal" column="valor_produto" precision="10" scale="2" nullable="false"/>
+    <many-to-one field="idCategoriaProduto" target-entity="CategoriaProduto" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_categoria_produto" referenced-column-name="id_categoria_planejamento"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
