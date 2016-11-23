@@ -10,13 +10,11 @@ Installation
 --------------
 
   * Install Composer dependencies;
-  ```
-composer install
-```
+  ```composer install```
+  
   * Create Database tables
-    ```
-php bin/console doctrine:schema:update --force
-```
+    ```php bin/console doctrine:schema:update --force```
+
   * Run start_server.bat to run server on localhost:8000
 
 What's inside?
