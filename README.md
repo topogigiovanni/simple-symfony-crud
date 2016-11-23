@@ -10,11 +10,11 @@ Steps to run
 --------------
 
   * Install Composer dependencies;
-  ```{r, engine='bash', count_lines}
+  ```
 composer install
 ```
   * Create Database tables
-    ```{r, engine='bash', count_lines}
+    ```
 php bin/console doctrine:schema:update --force
 ```
   * Run start_server.bat to run server on localhost:8000
