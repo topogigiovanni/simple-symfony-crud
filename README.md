@@ -32,8 +32,6 @@ The Simple Symfony Crud is configured with the following defaults:
 
   * Doctrine ORM/DBAL;
 
-  * Elastica(Elasticsearch);
-
   * Swiftmailer;
 
   * Annotations enabled for everything.
